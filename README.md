@@ -1,86 +1,108 @@
 # Simple Svelte Slideshow
 
-Demo
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-_Note that you will need to have [Node.js](https://nodejs.org) installed._
+[Demo](https://optimistic-carson-820f70.netlify.com/)
+As the name suggests, it is a simple svelte slideshow
+It uses the tweened store from "svelte/motion"
 
 ## Get started
 
-Install the dependencies...
+First install the slideshow
 
 ```bash
-cd svelte-app
-npm install
+npm install svelte-slideshow-gallery
 ```
 
-...then start [Rollup](https://rollupjs.org):
+Then on the top of your file you wish to use it add the following import statement
 
-```bash
-npm run dev
+```javascript
+import SliderGalery from "./SliderGallery.svelte";
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+Finaly add the following component into you markup
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
-
-## Building and running in production mode
-
-To create an optimised version of the app:
-
-```bash
-npm run build
+```html
+<SliderGalery {imgArray} />
 ```
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+## Options
 
-## Single-page app mode
+The only required prop is `imgArray` which is an array of objects.
+The objects should have two properties:
 
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
+- The `src` property which holds the image source/path
+- And a `text` property which holds the image description (see example below)
 
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for _any_ path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
+```javascript
+// These are images in the public folder
+let terre = "images/img_5terre_wide.jpg";
+let lights = "images/img_lights_wide.jpg";
+let mountains = "images/img_mountains_wide.jpg";
+let nature = "images/img_nature_wide.jpg";
+let snow = "images/img_snow_wide.jpg";
+let woods = "images/img_woods_wide.jpg";
+// imgArray is the name of the property
+let imgArray = [
+  { src: terre, text: "Cinque Terre" },
+  { src: lights, text: "Northen Lights" },
+  { src: mountains, text: "Mountains and fjords" },
+  { src: nature, text: "Nature and sunrise" },
+  { src: woods, text: "The Woods" },
+  { src: snow, text: "Snowy Mountains" }
+];
 ```
 
-## Deploying to the web
+Now the imgArray should be passed as a prop into the component
 
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
+```html
+<SliderGalery {imgArray} />
 ```
 
-Then, from within your project folder:
+And you are good to go.
 
-```bash
-cd public
-now deploy --name my-project
+There are three more optional properties:
+
+1. delay
+2. duration
+3. easingMethod
+
+`delay` is set to zero by default. The `duration` of the animations defaults to 1.5 seconds.
+For the `easingMethod` you can choose between five values:
+
+- sineInOut
+- cubicInOut,
+- expoInOut,
+- backInOut,
+- elasticInOut
+  For more information about these methods visit the following [link](https://svelte.dev/examples#easing)
+
+  Here is another example:
+
+```javascript
+<script>
+  import SliderGalery from "./SliderGallery.svelte";
+
+  // These are in the public folder
+  let terre = "images/img_5terre_wide.jpg";
+  let lights = "images/img_lights_wide.jpg";
+  let mountains = "images/img_mountains_wide.jpg";
+  let nature = "images/img_nature_wide.jpg";
+  let snow = "images/img_snow_wide.jpg";
+  let woods = "images/img_woods_wide.jpg";
+  let imgArray = [
+    { src: terre, text: "Cinque Terre" },
+    { src: lights, text: "Northen Lights" },
+    { src: mountains, text: "Mountains and fjords" },
+    { src: nature, text: "Nature and sunrise" },
+    { src: woods, text: "The Woods" },
+    { src: snow, text: "Snowy Mountains" }
+  ];
+  const easingMethod = "backInOut";
+  const duration = 2000;
+</script>
+
+<main>
+	<SliderGalery {imgArray} {duration} {easingMethod}/>
+</main>
 ```
 
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+Happy coding...

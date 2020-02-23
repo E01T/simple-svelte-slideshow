@@ -1,5 +1,5 @@
 {
-  "name": "slideshow-gallery",
+  "name": "svelte-slideshow-gallery",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -18,11 +18,19 @@
   "dependencies": {
     "sirv-cli": "^0.4.4"
   },
-  "description": "*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*",
-  "main": "rollup.config.js",
+  "description": "A simple slideshow svelte component",
+  "main": "src/SliderGallery.svelte",
   "keywords": [
-    "slideshow-gallery"
+    "svelte-slideshow-gallery"
   ],
   "author": "E01T",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/E01T/simple-svelte-slideshow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/E01T/simple-svelte-slideshow/issues"
+  },
+  "homepage": "https://github.com/E01T/simple-svelte-slideshow#readme"
 }
