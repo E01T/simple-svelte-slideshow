@@ -2,7 +2,7 @@
 
 [Demo](https://optimistic-carson-820f70.netlify.com/) page.
 
-As the name suggests, it is a simple svelte slideshow
+As the name suggests, it is a simple svelte slideshow.
 It uses the tweened store from "svelte/motion"
 
 ## Get started
@@ -10,7 +10,7 @@ It uses the tweened store from "svelte/motion"
 First install the slideshow
 
 ```bash
-npm install svelte-slideshow-gallery
+npm install simple-svelte-slideshow
 ```
 
 Then on the top of your file you wish to use it add the following import statement
