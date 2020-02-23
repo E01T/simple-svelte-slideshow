@@ -1,6 +1,7 @@
 # Simple Svelte Slideshow
 
-[Demo](https://optimistic-carson-820f70.netlify.com/)
+[Demo](https://optimistic-carson-820f70.netlify.com/) page.
+
 As the name suggests, it is a simple svelte slideshow
 It uses the tweened store from "svelte/motion"
 
@@ -15,7 +16,7 @@ npm install svelte-slideshow-gallery
 Then on the top of your file you wish to use it add the following import statement
 
 ```javascript
-import SliderGalery from "./SliderGallery.svelte";
+import SliderGalery from "SliderGallery";
 ```
 
 Finaly add the following component into you markup
@@ -73,13 +74,14 @@ For the `easingMethod` you can choose between five values:
 - expoInOut,
 - backInOut,
 - elasticInOut
+
   For more information about these methods visit the following [link](https://svelte.dev/examples#easing)
 
   Here is another example:
 
 ```javascript
 <script>
-  import SliderGalery from "./SliderGallery.svelte";
+  import SliderGalery from "SliderGallery";
 
   // These are in the public folder
   let terre = "images/img_5terre_wide.jpg";
