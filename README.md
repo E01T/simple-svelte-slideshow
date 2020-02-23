@@ -16,7 +16,7 @@ npm install svelte-slideshow-gallery
 Then on the top of your file you wish to use it add the following import statement
 
 ```javascript
-import SliderGalery from "SliderGallery";
+import SliderGalery from "simple-svelte-slideshow";
 ```
 
 Finaly add the following component into you markup
@@ -81,7 +81,7 @@ For the `easingMethod` you can choose between five values:
 
 ```javascript
 <script>
-  import SliderGalery from "SliderGallery";
+  import SliderGalery from "simple-svelte-slideshow";
 
   // These are in the public folder
   let terre = "images/img_5terre_wide.jpg";

@@ -1,5 +1,5 @@
 {
-  "name": "svelte-slideshow-gallery",
+  "name": "simple-svelte-slideshow",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -18,7 +18,7 @@
   "dependencies": {
     "sirv-cli": "^0.4.4"
   },
-  "description": "A simple slideshow svelte component",
+  "description": "A simple svelte slideshow component, which uses the tweened store from \"svelte/motion\"",
   "main": "src/SliderGallery.svelte",
   "keywords": [
     "svelte-slideshow-gallery"
