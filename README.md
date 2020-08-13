@@ -67,7 +67,7 @@ There are three more optional properties:
 3. easingMethod
 
 `delay` is set to zero by default. The `duration` of the animations defaults to 1.5 seconds.
-For the `easingMethod` you can choose between five values:
+For the `easingMethod` the default it sineInOut. You can choose between five values:
 
 - sineInOut
 - cubicInOut,
